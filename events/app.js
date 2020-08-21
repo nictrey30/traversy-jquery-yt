@@ -38,4 +38,27 @@ $(document).ready(function () {
   $(document).mousemove(function (e) {
     $('#coords').html(`Coords: X ${e.clientX} - Y ${e.clientY} `);
   });
+
+  $('input').focus(function (e) {
+    // console.log(`focused on ${e.currentTarget.id}`);
+    $(this).css('background', 'pink');
+  });
+
+  $('input').blur(function (e) {
+    // blur is the event opposite to focus, when you click outside f the box
+    $(this).css('background', '#fff');
+  });
+
+  $('input').keyup(function (e) {
+    console.log(e.currentTarget.value);
+  });
+
+  $('select#gender').change(function () {
+    console.log($(this).val());
+  });
+
+  $('#form').submit(function (e) {
+    e.preventDefault();
+    console.log('submitted');
+  });
 });
